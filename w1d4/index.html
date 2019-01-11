@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body style="background-color:lightgray">
+    <header>
+        <img src="https://assets.aaonline.io/fullstack/html-css/micro-projects/appacademylogo.png"
+            alt="a/A logo"
+            height="100">
+        <nav>
+            <ul>
+                <li><a href="#Summary">Summary</a></li>
+                <li><a href="#Ingredients">Ingredients</a></li>
+                <li><a href="#Directions">Directions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <aside>
+        <h2><a name="Ingredients">Ingredients</a></h2>
+
+        <ul>
+            <li>maceroni</li>
+            <li>cheese</li>
+        </ul>
+    </aside>
+
+    <h1>Mac &amp; Cheese</h1>
+
+    <section>
+        <figure>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Original_Mac_n_Cheese_.jpg"
+                alt="pic of mac and cheese"
+                height="200">
+
+            <figcaption>
+                <a href="https://en.wikipedia.org/wiki/Macaroni_and_cheese">Wiki
+                    page about Mac and Cheese</a>
+            </figcaption>
+        </figure>
+        <h2><a name="Summary">Summary</a></h2>
+
+        <p>This is a summary of the history of Mac and Cheese</p>
+
+        <h2><a name="Directions">Directions</a></h2>
+
+        <ol>
+            <li>make maceroni</li>
+            <li>melt the cheese on top</li>
+        </ol>
+    </section>
+    <section>
+        <form action="reviews">
+            <label for="name">Name</label>
+            <input type="text"
+                name="name"
+                id="name">
+            <label for="rating">Rating</label>
+            1<input type="radio"
+                name="rating"
+                id="rating"
+                value="1"
+                checked>
+            2<input type="radio"
+                name="rating"
+                id="rating"
+                value="2">
+            3<input type="radio"
+                name="rating"
+                id="rating"
+                value="3">
+            4<input type="radio"
+                name="rating"
+                id="rating"
+                value="4">
+            5<input type="radio"
+                name="rating"
+                id="rating"
+                value="5">
+            <label for="cooking_expertise">Cooking Expertise</label>
+            <select name="cooking_expertise"
+                id="cooking_expertise">
+                <option value="default">Select Cooking Expertise</option>
+                <option value="1">Sometimes Cook</option>
+                <option value="2">Cook Everyday</option>
+                <option value="3">Cooking is a Hobby</option>
+                <option value="4">Professional Chef</option>
+            </select>
+
+            <label for="review">Review</label>
+            <textarea name="review"
+                id="review"
+                cols="30"
+                rows="10">Place review here</textarea>
+        </form>
+    </section>
+    <footer>
+        <p>Mason Chinkin is the inventor of Mac and Cheese</p>
+    </footer>
+</body>
+
+</html>
