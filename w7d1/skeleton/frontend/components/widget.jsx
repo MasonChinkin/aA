@@ -20,7 +20,7 @@ class Widget extends React.Component {
       dataType: 'jsonp',
       url: `https://jobs.github.com/positions.json?location=${city}&markdown=true`,
       type: "GET",
-      success: function(resp) {
+      success: function (resp) {
         // tell the store to update with the new location and jobs;
         // use the action creator 'selectLocation' to build the object to
         // be dispatched
@@ -36,24 +36,26 @@ class Widget extends React.Component {
     // and 'city' variables
     const { city, jobs } = this.props.store.getState();
     const cityOptions = this.cities.map(city => (
-        <button onClick={ () => { this.fetchJobListings(city) }}
-             key={city}
-             className="job-option">
-          {city}
-        </button>
-      )
+      <button onClick={() => { this.fetchJobListings(city) }}
+        key={city}
+        className="job-option">
+        {city}
+      </button>
+    )
     );
 
     const jobListings = jobs.map(job => (
       <Job key={job.id}
-            title={job.title}
-            company={job.company}
-            location={job.location}
-            type={job.type}
-            description={job.description}
-            info = {job.url}/>
+        title={job.title}
+        company={job.company}
+        location={job.location}
+        type={job.type}
+        description={job.description}
+        info={job.url} />
     )
     );
+
+    console.log(jobListings);
 
     return (
       <div>
@@ -64,10 +66,10 @@ class Widget extends React.Component {
           Location:
           {cityOptions}
         </div>
-        
+
         <h3>{jobListings.length} Job Listings</h3>
         <ol className="listings-list">
-            {jobListings}
+          {jobListings}
         </ol>
       </div>
     );
