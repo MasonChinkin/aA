@@ -2,16 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default ({ currentUser, logout }) => {
-  const display = currentUser ? (
+  const display = (currentUser) ? (
     <div>
-      <p>hello {currentUser.username}</p>
-      <button onClick={logout}>log out</button>
+      <p>Hello {currentUser.userName}</p>
+      <button onClick={logout}>Log Out</button>
     </div>
   ) : (
       <div>
         <Link className="btn" to="/signup">Sign Up</Link>
         <Link className="btn" to="/login">Log In</Link>
-      </div>
+      </div >
     );
 
   return (

@@ -1,29 +1,29 @@
 import {
   postUser,
-  deleteSession,
-  postSession
+  postSession,
+  deleteSession
 } from "../utils/session";
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER'
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER'
 
-const receiveCurrentUser = user => ({
+export const receiveCurrentUser = user => ({
   type: RECEIVE_CURRENT_USER,
   user
 })
 
-const logoutCurrentUser = () => ({
-  type: LOGOUT_CURRENT_USER,
+export const logoutCurrentUser = () => ({
+  type: LOGOUT_CURRENT_USER
 })
 
-export const createNewUser = formUser => dispatch => {
-  return postUser(formUser).then(user => dispatch(receiveCurrentUser(user)));
+export const createUser = formUser => dispatch => {
+  return postUser(formUser).then(dispatch(receiveCurrentUser(formUser)))
 }
 
-export const logIn = formUser => dispatch => {
-  return postSession(formUser).then(user => dispatch(receiveCurrentUser(user)))
+export const loginUser = formUser => dispatch => {
+  return postSession(formUser).then(dispatch(receiveCurrentUser(formUser)))
 }
 
-export const logOut = () => dispatch => {
-  return deleteSession().then(user => dispatch(logoutCurrentUser(user)))
+export const logout = () => dispatch => {
+  return deleteSession().then(() => dispatch(logoutCurrentUser()))
 }
